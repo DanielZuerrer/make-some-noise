@@ -2,21 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Slider } from "~/components/ui/slider";
 
-export default function Noise() {
+export default function Noise({ audioFile }: { audioFile: string }) {
   const defaultVolume = 0.33;
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(defaultVolume);
 
   useEffect(() => {
-    const loadedAudio = new Audio("song.mp3");
+    const loadedAudio = new Audio(audioFile);
     loadedAudio.loop = true;
     loadedAudio.volume = defaultVolume;
     setAudio(loadedAudio);
     console.log("loaded audio");
-  }, []);
+  }, [audioFile]);
 
   function playOrPause() {
     if (!playing) {
@@ -51,17 +52,22 @@ export default function Noise() {
   }
 
   return (
-    <>
-      <Button disabled={audio === null} onClick={playOrPause}>
-        Play/Pause
-      </Button>
-      <Slider
-        defaultValue={[volume]}
-        min={0}
-        max={1}
-        step={0.01}
-        onValueChange={volumeChange}
-      />
-    </>
+    <Card className="max-w-xs">
+      <CardHeader>
+        <CardTitle>{audioFile}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4">
+        <Button disabled={audio === null} onClick={playOrPause}>
+          Play/Pause
+        </Button>
+        <Slider
+          defaultValue={[volume]}
+          min={0}
+          max={1}
+          step={0.01}
+          onValueChange={volumeChange}
+        />
+      </CardContent>
+    </Card>
   );
 }
