@@ -1,8 +1,8 @@
 import "~/styles/globals.css";
 
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 
-export const fontSans = FontSans({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${fontSans.variable}`}>{children}</body>
+      <body className={`font-sans ${inter.variable}`}>{children}</body>
     </html>
   );
 }
