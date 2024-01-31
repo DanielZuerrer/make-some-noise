@@ -7,36 +7,34 @@ import { Slider } from "~/components/ui/slider";
 export default function Noise({ audioFile }: { audioFile: string }) {
   const defaultVolume = 0.33;
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(defaultVolume);
 
   useEffect(() => {
+    const storedVolume = localStorage.getItem(`${audioFile}_volume`);
+    setVolume(storedVolume ? parseFloat(storedVolume) : defaultVolume);
+  }, [audioFile]);
+
+  useEffect(() => {
     const loadedAudio = new Audio(audioFile);
-    loadedAudio.loop = true;
-    loadedAudio.volume = defaultVolume;
     setAudio(loadedAudio);
+    loadedAudio.loop = true;
     console.log("loaded audio");
   }, [audioFile]);
 
   function playOrPause() {
-    if (!isPlaying) {
-      console.log("playing");
-      audio
-        ?.play()
-        .then(() => {
-          audio.loop = true;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    if (!isPlaying && audio !== null) {
+      audio.volume = volume;
+      audio.play().catch((error) => {
+        console.log(error);
+      });
     }
 
     if (isPlaying) {
-      console.log("pausing");
       audio?.pause();
     }
 
-    setPlaying(!isPlaying);
+    setIsPlaying(!isPlaying);
   }
 
   function volumeChange(value: number[]) {
@@ -44,6 +42,7 @@ export default function Noise({ audioFile }: { audioFile: string }) {
 
     const newVolume = value[0];
     setVolume(newVolume);
+    localStorage.setItem(`${audioFile}_volume`, newVolume.toString());
 
     if (audio === null) return;
 
