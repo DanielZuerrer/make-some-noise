@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Slider } from "~/components/ui/slider";
 
 export default function Noise({ audioFile }: { audioFile: string }) {
   const defaultVolume = 0.33;
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [playing, setPlaying] = useState(false);
+  const [isPlaying, setPlaying] = useState(false);
   const [volume, setVolume] = useState(defaultVolume);
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function Noise({ audioFile }: { audioFile: string }) {
   }, [audioFile]);
 
   function playOrPause() {
-    if (!playing) {
+    if (!isPlaying) {
       console.log("playing");
       audio
         ?.play()
@@ -32,12 +31,12 @@ export default function Noise({ audioFile }: { audioFile: string }) {
         });
     }
 
-    if (playing) {
+    if (isPlaying) {
       console.log("pausing");
       audio?.pause();
     }
 
-    setPlaying(!playing);
+    setPlaying(!isPlaying);
   }
 
   function volumeChange(value: number[]) {
@@ -52,21 +51,27 @@ export default function Noise({ audioFile }: { audioFile: string }) {
   }
 
   return (
-    <Card className="max-w-xs">
-      <CardHeader>
+    <Card
+      className={`
+        max-w-xs
+        bg-transparent
+        text-white
+        ${audio === null ? "border-slate-500 bg-slate-500" : ""}`}
+    >
+      <CardHeader onClick={playOrPause}>
         <CardTitle>{audioFile}</CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col gap-4">
-        <Button disabled={audio === null} onClick={playOrPause}>
-          Play/Pause
-        </Button>
-        <Slider
-          defaultValue={[volume]}
-          min={0}
-          max={1}
-          step={0.01}
-          onValueChange={volumeChange}
-        />
+      <CardContent className="h-8">
+        {isPlaying && (
+          <Slider
+            className=""
+            defaultValue={[volume]}
+            min={0}
+            max={1}
+            step={0.01}
+            onValueChange={volumeChange}
+          />
+        )}
       </CardContent>
     </Card>
   );
