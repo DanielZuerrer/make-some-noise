@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  CommandLineIcon,
   FireIcon,
   MusicalNoteIcon,
   SignalIcon,
@@ -13,7 +14,7 @@ export default function Noise({
   iconName,
 }: {
   audioFile: string;
-  iconName: "MusicalNoteIcon" | "FireIcon" | "Signal";
+  iconName: "MusicalNoteIcon" | "FireIcon" | "Signal" | "CommandLine";
 }) {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -47,6 +48,8 @@ export default function Noise({
         return <FireIcon className={iconClassName} />;
       case "Signal":
         return <SignalIcon className={iconClassName} />;
+      case "CommandLine":
+        return <CommandLineIcon className={iconClassName} />;
     }
   }
 

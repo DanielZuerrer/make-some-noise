@@ -11,6 +11,7 @@ export default function HomePage() {
           <Noise audioFile={"song.mp3"} iconName="MusicalNoteIcon" />
           <Noise audioFile={"campfire.mp3"} iconName="FireIcon" />
           <Noise audioFile={"fan.mp3"} iconName="Signal" />{" "}
+          <Noise audioFile={"lofi.mp3"} iconName="CommandLine" />{" "}
         </div>
       </div>
     </main>
