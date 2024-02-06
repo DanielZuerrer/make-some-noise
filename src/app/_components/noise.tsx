@@ -28,7 +28,9 @@ export default function Noise({ audioFile }: { audioFile: string }) {
   }
 
   return (
-    <div className="aspect-square border-4 border-white text-white">
+    <div
+      className={`${isPlaying ? "nm-inset-slate-900-sm" : "nm-concave-slate-900-lg"} aspect-square  w-1/6 min-w-40 rounded-xl text-white`}
+    >
       <h1 onClick={playOrPause}>{audioFile}</h1>
       {isPlaying && audio && (
         <VolumeSlider audio={audio} audioFile={audioFile} />
