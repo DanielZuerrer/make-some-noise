@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import VolumeSlider from "./volumeSlider";
 
 export default function Noise({ audioFile }: { audioFile: string }) {
@@ -29,22 +28,11 @@ export default function Noise({ audioFile }: { audioFile: string }) {
   }
 
   return (
-    <Card
-      className={`
-        aspect-square
-        max-w-xs
-        bg-transparent
-        text-white
-        ${audio === null ? "border-slate-500 bg-slate-500" : ""}`}
-    >
-      <CardHeader onClick={playOrPause}>
-        <CardTitle>{audioFile}</CardTitle>
-      </CardHeader>
-      <CardContent className="h-8">
-        {isPlaying && audio && (
-          <VolumeSlider audio={audio} audioFile={audioFile} />
-        )}
-      </CardContent>
-    </Card>
+    <div className="aspect-square border-4 border-white text-white">
+      <h1 onClick={playOrPause}>{audioFile}</h1>
+      {isPlaying && audio && (
+        <VolumeSlider audio={audio} audioFile={audioFile} />
+      )}
+    </div>
   );
 }
