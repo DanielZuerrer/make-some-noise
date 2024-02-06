@@ -30,7 +30,7 @@ export default function VolumeSlider({
   }
 
   return (
-    volume && (
+    volume !== null && (
       <Slider
         defaultValue={[volume]}
         min={0}

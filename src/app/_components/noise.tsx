@@ -28,12 +28,17 @@ export default function Noise({ audioFile }: { audioFile: string }) {
   }
 
   return (
-    <div
-      className={`${isPlaying ? "nm-inset-slate-900-sm" : "nm-concave-slate-900-lg"} aspect-square  w-1/6 min-w-40 rounded-xl text-white`}
-    >
-      <h1 onClick={playOrPause}>{audioFile}</h1>
+    <div className="aspect-square w-1/6 min-w-40 rounded-xl border border-white text-white">
+      <div
+        className="flex h-3/5 items-center justify-center border-b border-slate-700"
+        onClick={playOrPause}
+      >
+        <h1>{audioFile}</h1>
+      </div>
       {isPlaying && audio && (
-        <VolumeSlider audio={audio} audioFile={audioFile} />
+        <div className="flex h-2/5 items-center justify-center px-5">
+          <VolumeSlider audio={audio} audioFile={audioFile} />
+        </div>
       )}
     </div>
   );
