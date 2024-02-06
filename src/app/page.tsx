@@ -8,8 +8,9 @@ export default function HomePage() {
           make some noise
         </h1>
         <div className="flex w-10/12 flex-row flex-wrap justify-center gap-10">
-          <Noise audioFile={"song.mp3"} />
-          <Noise audioFile={"campfire.mp3"} />
+          <Noise audioFile={"song.mp3"} iconName="MusicalNoteIcon" />
+          <Noise audioFile={"campfire.mp3"} iconName="FireIcon" />
+          <Noise audioFile={"fan.mp3"} iconName="Signal" />{" "}
         </div>
       </div>
     </main>
