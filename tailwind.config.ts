@@ -34,7 +34,7 @@ const config = {
       },
       backgroundImage: {
         "noise": "url('/noise.png')",
-      },
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

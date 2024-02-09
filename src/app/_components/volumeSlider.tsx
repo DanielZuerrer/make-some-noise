@@ -7,7 +7,7 @@ export default function VolumeSlider({
   audio: HTMLAudioElement;
   audioFile: string;
 }) {
-  const defaultVolume = 0.33;
+  const defaultVolume = 0.15;
 
   const [volume, setVolume] = useState<number | null>(null);
 
@@ -34,7 +34,7 @@ export default function VolumeSlider({
       <Slider
         defaultValue={[volume]}
         min={0}
-        max={1}
+        max={0.5}
         step={0.01}
         onValueChange={onVolumeChange}
       />

@@ -17,7 +17,7 @@ const Slider = React.forwardRef<
     )}
     {...props}
   >
-    <SliderPrimitive.Track className="relative h-4 w-full grow overflow-hidden rounded-lg border border-white">
+    <SliderPrimitive.Track className="chromatic-box relative h-4 w-full grow overflow-hidden rounded-lg border border-white">
       <SliderPrimitive.Range className="absolute h-full bg-white" />
     </SliderPrimitive.Track>
   </SliderPrimitive.Root>

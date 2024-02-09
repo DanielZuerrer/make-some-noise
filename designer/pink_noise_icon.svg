@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect x="-8" y="-3" width="70" height="62" style="stroke:white;stroke-width:3px;"/>
+    <path d="M24,6L24,42" style="fill:none;stroke:white;stroke-width:3px;"/>
+    <g transform="matrix(1,0,0,0.722222,11,6.66667)">
+        <path d="M24,6L24,29.538" style="fill:none;stroke:white;stroke-width:3.44px;"/>
+    </g>
+    <g transform="matrix(1,0,0,0.722222,-11,6.66667)">
+        <path d="M24,6L24,42" style="fill:none;stroke:white;stroke-width:3.44px;"/>
+    </g>
+    <g transform="matrix(1,0,0,0.444444,22,13.3333)">
+        <path d="M24,6L24,42" style="fill:none;stroke:white;stroke-width:3.88px;"/>
+    </g>
+    <g transform="matrix(1,0,0,0.444444,-22,13.3333)">
+        <path d="M24,6L24,42" style="fill:none;stroke:white;stroke-width:3.88px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,1.20389,-5)">
+        <g transform="matrix(18,0,0,18,28,46.1045)">
+            <path d="M0.192,-0.455L0.192,-0.439C0.217,-0.47 0.243,-0.493 0.27,-0.507C0.297,-0.522 0.328,-0.529 0.362,-0.529C0.403,-0.529 0.441,-0.518 0.475,-0.497C0.51,-0.476 0.537,-0.445 0.557,-0.404C0.577,-0.364 0.587,-0.315 0.587,-0.26C0.587,-0.219 0.581,-0.181 0.57,-0.147C0.558,-0.112 0.542,-0.084 0.522,-0.06C0.502,-0.037 0.478,-0.019 0.45,-0.007C0.423,0.006 0.393,0.012 0.362,0.012C0.324,0.012 0.292,0.005 0.266,-0.011C0.24,-0.026 0.215,-0.049 0.192,-0.078L0.192,0.122C0.192,0.181 0.171,0.21 0.128,0.21C0.103,0.21 0.086,0.202 0.078,0.187C0.07,0.172 0.066,0.15 0.066,0.121L0.066,-0.454C0.066,-0.479 0.071,-0.498 0.083,-0.511C0.094,-0.524 0.109,-0.53 0.128,-0.53C0.147,-0.53 0.162,-0.523 0.174,-0.51C0.186,-0.498 0.192,-0.479 0.192,-0.455ZM0.453,-0.261C0.453,-0.296 0.448,-0.327 0.437,-0.352C0.426,-0.377 0.411,-0.396 0.392,-0.41C0.373,-0.423 0.352,-0.43 0.329,-0.43C0.292,-0.43 0.261,-0.416 0.236,-0.387C0.211,-0.358 0.198,-0.315 0.198,-0.259C0.198,-0.206 0.211,-0.164 0.236,-0.135C0.261,-0.106 0.292,-0.091 0.329,-0.091C0.351,-0.091 0.372,-0.097 0.391,-0.11C0.41,-0.123 0.425,-0.142 0.436,-0.168C0.447,-0.194 0.453,-0.225 0.453,-0.261Z" style="fill:white;fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.chromatic {
+.chromatic-text {
     text-shadow: 1px -0.5px 1px rgba(93, 34, 128, 1),-1px 0.5px 1px rgba(55, 209, 55, 1);
+}
+
+.chromatic-svg {
+    filter: drop-shadow(0.7px -0.3px 0.5px rgba(93, 34, 128, 1)) drop-shadow(-0.7px 0.3px 0.5px rgba(55, 209, 55, 1));
+}
+
+.chromatic-box {
+    box-shadow: 0.7px -0.3px 0.5px rgba(93, 34, 128, 1),-0.7px 0.3px 0.5px rgba(55, 209, 55, 1);
 }
